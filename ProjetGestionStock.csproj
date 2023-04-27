@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DAF0C792-F5CA-4547-929E-E85FF5DDE99B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProjetGestionStock</RootNamespace>
+    <AssemblyName>ProjetGestionStock</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\FournisseurController.cs" />
+    <Compile Include="Controller\ProduitController.cs" />
+    <Compile Include="Controller\StatistiqueController.cs" />
+    <Compile Include="Init\Init_db.cs" />
+    <Compile Include="Migrations\202102181606009_InitialCreate.cs" />
+    <Compile Include="Migrations\202102181606009_InitialCreate.designer.cs">
+      <DependentUpon>202102181606009_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102181623278_add_table_commande.cs" />
+    <Compile Include="Migrations\202102181623278_add_table_commande.designer.cs">
+      <DependentUpon>202102181623278_add_table_commande.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102181632423_delete_commande_table.cs" />
+    <Compile Include="Migrations\202102181632423_delete_commande_table.designer.cs">
+      <DependentUpon>202102181632423_delete_commande_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102181652193_add_commande_table_2.cs" />
+    <Compile Include="Migrations\202102181652193_add_commande_table_2.designer.cs">
+      <DependentUpon>202102181652193_add_commande_table_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102182038051_delete_table_commande_2.cs" />
+    <Compile Include="Migrations\202102182038051_delete_table_commande_2.designer.cs">
+      <DependentUpon>202102182038051_delete_table_commande_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102182054132_Update_commande_table.cs" />
+    <Compile Include="Migrations\202102182054132_Update_commande_table.designer.cs">
+      <DependentUpon>202102182054132_Update_commande_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Model_Gestion_Stock.cs" />
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fournisseur\FormCommanderFournisseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fournisseur\FormCommanderFournisseur.Designer.cs">
+      <DependentUpon>FormCommanderFournisseur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fournisseur\FormFournisseur_item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fournisseur\FormFournisseur_item.Designer.cs">
+      <DependentUpon>FormFournisseur_item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fournisseur\FormListeCommande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fournisseur\FormListeCommande.Designer.cs">
+      <DependentUpon>FormListeCommande.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fournisseur\FormListeFournisseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fournisseur\FormListeFournisseur.Designer.cs">
+      <DependentUpon>FormListeFournisseur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fournisseur\FormOneFournisseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fournisseur\FormOneFournisseur.Designer.cs">
+      <DependentUpon>FormOneFournisseur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\produit\FormAjouterProduit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\produit\FormAjouterProduit.Designer.cs">
+      <DependentUpon>FormAjouterProduit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\statistique\FormControleJour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\statistique\FormControleJour.Designer.cs">
+      <DependentUpon>FormControleJour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\produit\FormListeProduits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\produit\FormListeProduits.Designer.cs">
+      <DependentUpon>FormListeProduits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\produit\FormListeProduitsDestocker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\produit\FormListeProduitsDestocker.Designer.cs">
+      <DependentUpon>FormListeProduitsDestocker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\produit\FormOneProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\produit\FormOneProduct.Designer.cs">
+      <DependentUpon>FormOneProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\produit\FormProduit_Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\produit\FormProduit_Item.Designer.cs">
+      <DependentUpon>FormProduit_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\statistique\FormStatistique.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\statistique\FormStatistique.Designer.cs">
+      <DependentUpon>FormStatistique.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fournisseur\FormCommanderFournisseur.resx">
+      <DependentUpon>FormCommanderFournisseur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fournisseur\FormFournisseur_item.resx">
+      <DependentUpon>FormFournisseur_item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fournisseur\FormListeCommande.resx">
+      <DependentUpon>FormListeCommande.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fournisseur\FormListeFournisseur.resx">
+      <DependentUpon>FormListeFournisseur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fournisseur\FormOneFournisseur.resx">
+      <DependentUpon>FormOneFournisseur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\produit\FormAjouterProduit.resx">
+      <DependentUpon>FormAjouterProduit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\statistique\FormControleJour.resx">
+      <DependentUpon>FormControleJour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\produit\FormListeProduits.resx">
+      <DependentUpon>FormListeProduits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\produit\FormListeProduitsDestocker.resx">
+      <DependentUpon>FormListeProduitsDestocker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\produit\FormOneProduct.resx">
+      <DependentUpon>FormOneProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\produit\FormProduit_Item.resx">
+      <DependentUpon>FormProduit_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\statistique\FormStatistique.resx">
+      <DependentUpon>FormStatistique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102181606009_InitialCreate.resx">
+      <DependentUpon>202102181606009_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102181623278_add_table_commande.resx">
+      <DependentUpon>202102181623278_add_table_commande.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102181632423_delete_commande_table.resx">
+      <DependentUpon>202102181632423_delete_commande_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102181652193_add_commande_table_2.resx">
+      <DependentUpon>202102181652193_add_commande_table_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102182038051_delete_table_commande_2.resx">
+      <DependentUpon>202102182038051_delete_table_commande_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102182054132_Update_commande_table.resx">
+      <DependentUpon>202102182054132_Update_commande_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\creatoore psd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\creatoore psd1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\erreur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moins%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\creatoor2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exclamation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bar-chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chercher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chercher1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userfournisseur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user%283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imprimante.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\livraison.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Init\img\1.jpg" />
+    <Content Include="Init\img\2.jpg" />
+    <Content Include="Init\img\4.jpg" />
+    <Content Include="Init\img\3.jpg" />
+    <Content Include="Init\img\5.jpg" />
+    <Content Include="Init\img\6.jpg" />
+    <Content Include="Init\img\7.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

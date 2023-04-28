@@ -17,7 +17,6 @@ The main functionality of this Inventory Management Project is to allow the mini
 Overall, this project aims to provide a robust and user-friendly inventory management solution for a minimarket store.
 
 
-![Capture d’écran 2020-12-11 152234](https://user-images.githubusercontent.com/71756594/235040784-32fbdd82-089b-4c9f-8bbe-2cfae5559b9e.png)
 
 
 ![Capture d’écran 2020-12-11 152317](https://user-images.githubusercontent.com/71756594/235040842-9193019e-5909-4154-80a9-522b2fbb1ed6.png)
